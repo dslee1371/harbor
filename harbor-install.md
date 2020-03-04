@@ -109,12 +109,12 @@ cp registry.dsleecom.lab.key /etc/docker/certs.d/registry.dsleecom.lab/
 cp ca.crt /etc/docker/certs.d/registry.dsleecom.lab/
 cp registry.dsleecom.lab.crt /etc/docker/certs.d/registry.dsleecom.lab/
 cp ca.key /etc/docker/certs.d/registry.dsleecom.lab/
-
+```
 
 !! If you mapped the default nginx port 443 to a different port, create the folder
 '/etc/docker/cert.d/registry.dsleecom.lab:port' or /'etc/docker/cert.d/harbor_IP:port'.
 
-```
+
 
 ## Restart Docker Engine.
 
