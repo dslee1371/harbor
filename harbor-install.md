@@ -39,7 +39,7 @@ mkdir -p /opt/certs
 cd /opt/certs
 ```
 
-## create CA
+## Create CA
 ```
 openssl genrsa -out ca.key 4096
 openssl req -x509 -new -nodes -sha512 -days 3650 \
@@ -51,7 +51,7 @@ openssl req -x509 -new -nodes -sha512 -days 3650 \
 # -key ca.key \
 # -out ca.crt
 ```
-## create server certificate
+## Create server certificate
 ```
 openssl genrsa -out registry.dsleecom.lab.key 4096
 openssl req -newkey rsa:4096 -nodes -sha256 -keyout domain.key -x509 -days 365 -out domain.crt
