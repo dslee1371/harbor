@@ -122,17 +122,15 @@ cp ca.key /etc/docker/certs.d/registry.dsleecom.lab/
 
 `systemctl restart docker`
 
-## Deploy or Reconfigure Harhor
-```
-IF you have not yet deployed Harbor, see Configure the Harbor YML for information about hot to configure Harbor to use the certificates by specifying the hostname and https attributes in harbor.yml
-https://github.com/goharbor/harbor/blob/master/docs/1.10/install-config/configure-yml-file.md
+## Deploy or Reconfigure Harbor
+- IF you have not yet deployed Harbor, see Configure the Harbor YML for information about hot to configure Harbor to use the certificates by specifying the hostname and https attributes in harbor.yml
+- https://github.com/goharbor/harbor/blob/master/docs/1.10/install-config/configure-yml-file.md
 
-If you already deployed Harbor with HTTP and want to reconfigure it to use HTTPS, perfoem the following steps.
+- If you already deployed Harbor with HTTP and want to reconfigure it to use HTTPS, perfoem the following steps.
 
 1. Run the prepare script to enable HTTPS.
 
-Harbor uses an nginx instance as a reverse proxy for all services. You use the prepare script to configure nginx to use HTTPS. The prepare is in the Harbot installer bundle, at the same level as the install.sh script.
-```
+- Harbor uses an nginx instance as a reverse proxy for all services. You use the prepare script to configure nginx to use HTTPS. The prepare is in the Harbot installer bundle, at the same level as the install.sh script.
 
 ## Connfigure firewall
 ```
