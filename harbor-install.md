@@ -201,3 +201,46 @@ $ sudo yum remove docker \
                   docker-logrotate \
                   docker-engine
 
+## check docker version 
+```
+#yum install docker-ce
+[root@registry docker]# docker --version
+Docker version 19.03.6, build 369ce74a3c
+
+#yum install docker
+[root@registry sysconfig]# docker --version
+Docker version 1.13.1, build 4ef4b30/1.13.1
+```
+
+## docker config example
+```
+# /etc/sysconfig/docker
+
+# Modify these options if you want to change the way the docker daemon runs
+OPTIONS='--selinux-enabled --log-driver=journald --signature-verification=false --insecure-registry registry.futuregen-ocp.lab:5000 --insecure-registry futuregen.icp:8500 --insecure-registry docker-registry-default.apps.futuregen-ocp.lab'
+if [ -z "${DOCKER_CERT_PATH}" ]; then
+    DOCKER_CERT_PATH=/etc/docker
+fi
+
+# Do not add registries in this file anymore. Use /etc/containers/registries.conf
+# instead. For more information reference the registries.conf(5) man page.
+
+# Location used for temporary files, such as those created by
+# docker load and build operations. Default is /var/lib/docker/tmp
+# Can be overriden by setting the following environment variable.
+# DOCKER_TMPDIR=/var/tmp
+
+# Controls the /etc/cron.daily/docker-logrotate cron job status.
+# To disable, uncomment the line below.
+# LOGROTATE=false
+
+# docker-latest daemon can be used by starting the docker-latest unitfile.
+# To use docker-latest client, uncomment below lines
+#DOCKERBINARY=/usr/bin/docker-latest
+#DOCKERDBINARY=/usr/bin/dockerd-latest
+#DOCKER_CONTAINERD_BINARY=/usr/bin/docker-containerd-latest
+#DOCKER_CONTAINERD_SHIM_BINARY=/usr/bin/docker-containerd-shim-latest
+ADD_REGISTRY='--add-registry registry.futuregen-ocp.lab:5000'
+INSECURE_REGISTRY='--insecure-registry registry.futuregen-ocp.lab:5000 --insecure-registry futuregen.icp:8500'
+
+```
