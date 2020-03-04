@@ -34,13 +34,13 @@ sudo chmod +x /usr/local/bin/docker-compose
 ## Unzip harbor zip file
 ```
 tar xvzf harbor-offline-installer-v1.10.1.tgz
-cd harbor # check file list > ??
-mkdir -p /opt/certs
-cd /opt/certs
+cd harbor
 ```
 
 ## Create CA
 ```
+mkdir -p /opt/certs
+cd /opt/certs
 openssl genrsa -out ca.key 4096
 openssl req -x509 -new -nodes -sha512 -days 3650 \
  -key ca.key \
