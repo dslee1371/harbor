@@ -82,7 +82,7 @@ DNS.3=registry
 EOF
 ```
 
-# Use the v3.ext file to generate a certificate for your habor
+# Use the v3.ext file to generate a certificate for your harbor
 ```
 openssl x509 -req -sha512 -days 3650 \
     -extfile v3.ext \
