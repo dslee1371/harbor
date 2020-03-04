@@ -1,7 +1,7 @@
 ## server info
 `192.168.1.10`
 
-## centos install
+## Centos install
 `D-2@`
 
 ## configure ip
@@ -31,7 +31,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 (latest) wget https://github.com/goharbor/harbor/releases/download/v1.10.1/harbor-offline-installer-v1.10.1.tgz
 ```
 
-## Unzup harbor zip file
+## Unzip harbor zip file
 ```
 tar xvzf harbor-offline-installer-v1.10.1.tgz
 cd harbor # check file list > ??
