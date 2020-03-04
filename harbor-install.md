@@ -208,6 +208,7 @@ $ sudo yum remove docker \
                   docker-latest-logrotate \
                   docker-logrotate \
                   docker-engine
+```
 
 ## check docker version 
 ```
