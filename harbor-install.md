@@ -64,7 +64,7 @@ openssl req -sha512 -new \
 #    -key registry.dsleecom.lab.key \
 #    -out registry.dsleecom.lab.csr
 ```
->> doamin : registry.dsleecom.lab 
+> doamin : registry.dsleecom.lab 
 
 
 ## Generate an x509 v3 extension file
@@ -93,17 +93,19 @@ openssl x509 -req -sha512 -days 3650 \
 ```
 
 ## Provide the Certificates to Harbor and Docker
+1. Copy the server certificate and key into the certificates folder on your Horbor host.
 ```
-#1. Copy the server certificate and key into the certificates folder on your Horbor host.
 cp registry.dsleecom.lab.crt /data/cert
 cp registry.dsleecom.lab.key /data/cert
-
-#2. Convert registry.dsleecom.lab.crt to registry.dsleecom.lab.cert, for user by Docker.
-#   The Docker daemon interprets .crt files as CA certificates and .cert files as client certificates.
+```
+2. Convert registry.dsleecom.lab.crt to registry.dsleecom.lab.cert, for user by Docker.
+The Docker daemon interprets .crt files as CA certificates and .cert files as client certificates.
+```
 openssl x509 -inform PEM -in registry.dsleecom.lab.crt -out registry.dsleecom.lab.cert
 openssl x509 -inform PEM -in ca.crt -out ca.cert
-
-#3. Copy the server certificate, key and CA files into the Docker certificates folder on the Harbor host. You must create the appropriate folders first.
+```
+3. Copy the server certificate, key and CA files into the Docker certificates folder on the Harbor host. You must create the appropriate folders first.
+```
 cp registry.dsleecom.lab.cert /etc/docker/certs.d/registry.dsleecom.lab/
 cp registry.dsleecom.lab.key /etc/docker/certs.d/registry.dsleecom.lab/
 cp ca.crt /etc/docker/certs.d/registry.dsleecom.lab/
@@ -111,7 +113,7 @@ cp registry.dsleecom.lab.crt /etc/docker/certs.d/registry.dsleecom.lab/
 cp ca.key /etc/docker/certs.d/registry.dsleecom.lab/
 ```
 
-!! If you mapped the default nginx port 443 to a different port, create the folder
+> If you mapped the default nginx port 443 to a different port, create the folder
 '/etc/docker/cert.d/registry.dsleecom.lab:port' or /'etc/docker/cert.d/harbor_IP:port'.
 
 
