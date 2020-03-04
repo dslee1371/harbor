@@ -1,4 +1,4 @@
-## server info
+## Server info
 `192.168.1.10`
 
 ## Centos install
@@ -63,9 +63,9 @@ openssl req -sha512 -new \
 #   -subj "/C=CN/ST=Beijing/L=Beijing/O=example/OU=Personal/CN=registry.dsleecom.lab" \
 #    -key registry.dsleecom.lab.key \
 #    -out registry.dsleecom.lab.csr
-
->> doamin : registry.dsleecom.lab 
 ```
+>> doamin : registry.dsleecom.lab 
+
 
 ## Generate an x509 v3 extension file
 ```
