@@ -54,7 +54,6 @@ openssl req -x509 -new -nodes -sha512 -days 3650 \
 ## Create server certificate
 ```
 openssl genrsa -out registry.dsleecom.lab.key 4096
-openssl req -newkey rsa:4096 -nodes -sha256 -keyout domain.key -x509 -days 365 -out domain.crt
 openssl req -sha512 -new \
     -key registry.dsleecom.lab.key \
     -out registry.dsleecom.lab.csr
