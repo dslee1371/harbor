@@ -61,7 +61,7 @@ openssl x509 -req -sha512 -days 3650 \
 
 ## Provide the certificates to harbor
 ```
-mkdir /data/cert # data patitioning
+mkdir -p /data/cert # data patitioning
 cp registry.futurgen.lab.crt /data/cert
 cp registry.futurgen.lab.key /data/cert
 ```
