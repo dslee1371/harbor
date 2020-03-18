@@ -30,8 +30,8 @@ openssl req -x509 -new -nodes -sha512 -days 3650 \
 ```
 openssl genrsa -out registry.futurgen.lab.key 4096
 openssl req -sha512 -new \
-    -key registry.futurgen.lab.key \
-    -out registry.futurgen.lab.csr
+    -key registry.futuregen.lab.key \
+    -out registry.futuregen.lab.csr
 ```
 
 ## Generate an x509 v3 extension file
